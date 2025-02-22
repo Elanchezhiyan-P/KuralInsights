@@ -1,0 +1,18 @@
+/thirukural-app
+├── /public
+│   └── index.html
+├── /src
+│   ├── /components
+│   │   ├── KuralDisplay.tsx
+│   ├── /pages
+│   │   ├── HomePage.tsx
+│   ├── /types
+│   │   ├── index.ts
+│   ├── /assets
+│   │   ├── (images, icons, etc.)
+│   ├── App.tsx
+│   ├── App.css
+│   ├── index.tsx
+│   ├── react-app-env.d.ts
+├── package.json
+├── tsconfig.json
