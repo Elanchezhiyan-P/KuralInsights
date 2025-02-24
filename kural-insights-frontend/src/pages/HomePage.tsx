@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { KuralRow, KuralResponse } from "../types";
-import KuralDisplay from "../components/KuralDisplay";
 import Loader from "../components/loader/Loader";
+import "./HomePage.css";
+import { KuralResponse, KuralRow } from "../types";
+import axios from "axios";
+import KuralDisplay from "../components/KuralDisplay";
 
-const HomePage: React.FC = () => {
+const Home: React.FC = () => {
+  const [loading, setLoading] = useState(true);
   const [kuralData, setKuralData] = useState<KuralRow | null>(null);
 
   const getRandomOffset = () => {
@@ -19,6 +21,7 @@ const HomePage: React.FC = () => {
           `https://datasets-server.huggingface.co/rows?dataset=Selvakumarduraipandian%2FThirukural&config=default&split=train&offset=${randomOffset}&length=1`
         );
         setKuralData(response.data.rows[0]?.row || null);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching Kural data", error);
       }
@@ -28,13 +31,13 @@ const HomePage: React.FC = () => {
   }, []);
 
   return (
-    <div className="container-fluid">
-      <div className="text-center mb-4">
-        <h1>Thirukkural (திருக்குறள்)</h1>
-      </div>
-      {kuralData ? <KuralDisplay kural={kuralData} /> : <Loader />}
+    <div
+      className="home-container d-flex justify-content-center align-items-center"
+      style={{ flexGrow: 1 }}
+    >
+      {loading ? <Loader /> : kuralData && <KuralDisplay kural={kuralData} />}
     </div>
   );
 };
 
-export default HomePage;
+export default Home;

@@ -1,0 +1,22 @@
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Align to the top */
+    flex-direction: column;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    min-height: 80vh;
+    /* Give space for content */
+    position: relative;
+    /* Ensure positioning is set */
+}
+
+/* Adjust for mobile screen sizes */
+@media (max-width: 576px) {
+    .home-container {
+        padding: 10px;
+        /* Reduce padding on mobile */
+    }
+}

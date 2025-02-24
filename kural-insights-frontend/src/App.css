@@ -1,17 +1,59 @@
-body,
-html {
-  height: 100%;
+/* Set the background color and overall padding */
+body {
+  background-color: #f4f4f4;
   margin: 0;
+  font-family: 'Arial', sans-serif;
 }
 
-.container-fluid {
-  height: 100vh;
+/* Center the entire container */
+.container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  /* Align to top */
   align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding: 0 20px;
+  /* Ensure some padding on the sides */
 }
 
-.text-center {
+/* Style the title */
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #3e5c6b;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #5b8b8e, #72c1b1);
+  color: white;
+  transition: transform 0.3s ease-in-out;
+  padding: 20px;
+  margin-bottom: 20px;
   text-align: center;
+}
+
+/* Hover effect for the title */
+.title:hover {
+  transform: translateY(-10px);
+}
+
+/* Add responsive behavior to title */
+@media (max-width: 576px) {
+  .title {
+    font-size: 2rem;
+    padding: 15px;
+  }
+}
+
+/* Ensures spacing between elements */
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+/* Mobile adjustments for overall padding */
+@media (max-width: 576px) {
+  .container {
+    padding: 0 10px;
+    /* Reduce padding on small screens */
+  }
 }
